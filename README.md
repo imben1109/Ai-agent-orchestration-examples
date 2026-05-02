@@ -109,12 +109,14 @@ All examples in this repository are written in **Python 3.10+**.
 
 The frameworks themselves also have official SDKs in other languages:
 
-| Framework | Python | JavaScript / TypeScript |
-|-----------|:------:|:-----------------------:|
-| LangChain | ✅ (`langchain`) | ✅ ([LangChain.js](https://github.com/langchain-ai/langchainjs)) |
-| LangGraph | ✅ (`langgraph`) | ✅ ([LangGraph.js](https://github.com/langchain-ai/langgraphjs)) |
-| AutoGen   | ✅ (`pyautogen`) | ❌ (Python only) |
-| CrewAI    | ✅ (`crewai`)    | ❌ (Python only) |
+| Framework | Python | JavaScript / TypeScript | Java | Open Source | License | GitHub Stars |
+|-----------|:------:|:-----------------------:|:----:|:-----------:|---------|:------------:|
+| [LangChain](https://github.com/langchain-ai/langchain) | ✅ (`langchain`) | ✅ ([LangChain.js](https://github.com/langchain-ai/langchainjs)) | ❌ | ✅ | MIT | ~136k |
+| [LangGraph](https://github.com/langchain-ai/langgraph) | ✅ (`langgraph`) | ✅ ([LangGraph.js](https://github.com/langchain-ai/langgraphjs)) | ❌ | ✅ | MIT | ~31k |
+| [AutoGen](https://github.com/microsoft/autogen)        | ✅ (`pyautogen`) | ❌ (Python only) | ❌ | ✅ | CC-BY-4.0 | ~58k |
+| [CrewAI](https://github.com/crewAIInc/crewAI)         | ✅ (`crewai`)    | ❌ (Python only) | ❌ | ✅ | MIT | ~50k |
+
+> ⭐ Star counts are approximate values checked in May 2026. None of the four frameworks currently provide an official Java SDK.
 
 > **Why Python for the examples?**  All four frameworks have the most complete features and community support in Python, and the LLM/data-science ecosystem (pandas, matplotlib, seaborn, …) is primarily Python-first.
 
