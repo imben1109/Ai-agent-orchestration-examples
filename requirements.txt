@@ -8,3 +8,6 @@ crewai>=0.30.0
 # Utilities used across examples
 python-dotenv>=1.0.0
 rich>=13.0.0          # pretty terminal output
+
+# Testing
+pytest>=8.0.0

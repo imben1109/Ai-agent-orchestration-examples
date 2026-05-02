@@ -103,6 +103,23 @@ Do you need multiple agents collaborating?
 
 ---
 
+## Programming Language Support
+
+All examples in this repository are written in **Python 3.10+**.
+
+The frameworks themselves also have official SDKs in other languages:
+
+| Framework | Python | JavaScript / TypeScript |
+|-----------|:------:|:-----------------------:|
+| LangChain | ✅ (`langchain`) | ✅ ([LangChain.js](https://github.com/langchain-ai/langchainjs)) |
+| LangGraph | ✅ (`langgraph`) | ✅ ([LangGraph.js](https://github.com/langchain-ai/langgraphjs)) |
+| AutoGen   | ✅ (`pyautogen`) | ❌ (Python only) |
+| CrewAI    | ✅ (`crewai`)    | ❌ (Python only) |
+
+> **Why Python for the examples?**  All four frameworks have the most complete features and community support in Python, and the LLM/data-science ecosystem (pandas, matplotlib, seaborn, …) is primarily Python-first.
+
+---
+
 ## Repository Structure
 
 \`\`\`
@@ -111,21 +128,54 @@ Do you need multiple agents collaborating?
 ├── requirements.txt
 ├── framework_selector/
 │   ├── README.md
-│   └── agent.py          # Interactive advisor CLI
-└── examples/
-    ├── langchain/
-    │   ├── README.md
-    │   └── example.py
-    ├── langgraph/
-    │   ├── README.md
-    │   └── example.py
-    ├── autogen/
-    │   ├── README.md
-    │   └── example.py
-    └── crewai/
-        ├── README.md
-        └── example.py
+│   └── agent.py            # Interactive advisor CLI
+├── examples/
+│   ├── langchain/
+│   │   ├── README.md
+│   │   └── example.py
+│   ├── langgraph/
+│   │   ├── README.md
+│   │   └── example.py
+│   ├── autogen/
+│   │   ├── README.md
+│   │   └── example.py
+│   └── crewai/
+│       ├── README.md
+│       └── example.py
+└── tests/
+    ├── conftest.py
+    ├── test_framework_selector.py
+    ├── test_langchain_example.py
+    ├── test_langgraph_example.py
+    ├── test_autogen_example.py
+    └── test_crewai_example.py
 \`\`\`
+
+---
+
+## Running the Tests
+
+The test suite uses **pytest** and runs entirely without an API key — all tests exercise demo/mock logic only.
+
+\`\`\`bash
+# Install test dependency (already in requirements.txt)
+pip install pytest
+
+# Run all tests
+pytest tests/ -v
+
+# Run tests for a specific module
+pytest tests/test_framework_selector.py -v
+pytest tests/test_langchain_example.py -v
+\`\`\`
+
+| Test file | What it covers |
+|-----------|----------------|
+| \`test_framework_selector.py\` | FRAMEWORKS/EXAMPLES structure, all 5 scoring functions, \`_build_score_text\`, full demo run + recommendation scenarios |
+| \`test_langchain_example.py\` | Mock order lookup tool, mock knowledge-base tool, demo run output |
+| \`test_langgraph_example.py\` | \`ResearchState\` TypedDict, demo run node labels & content |
+| \`test_autogen_example.py\` | Multi-agent demo conversation: speakers, code snippet, termination keyword |
+| \`test_crewai_example.py\` | Crew pipeline demo: roles, outputs per step, statistics presence |
 
 ---
 
