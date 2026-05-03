@@ -1,0 +1,13 @@
+# Core LLM / agent frameworks
+langchain>=0.2.0
+langchain-openai>=0.1.0
+langgraph>=0.1.0
+pyautogen>=0.2.0
+crewai>=0.30.0
+
+# Utilities used across examples
+python-dotenv>=1.0.0
+rich>=13.0.0          # pretty terminal output
+
+# Testing
+pytest>=8.0.0
